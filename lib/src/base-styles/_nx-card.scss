@@ -23,15 +23,9 @@
   background-color: #fff;
   border-radius: $nx-border-radius;
   box-sizing: border-box;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto;
-  grid-template-columns: auto;
-  -ms-grid-rows: auto auto auto;
-  grid-template-areas:
-    "card-title"
-    "card-content"
-    "card-footer";
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin: 0 $nx-spacing-md 0 0;
   padding: $nx-spacing-l 48px;
   text-align: center;
@@ -41,33 +35,22 @@
 
 .nx-card-header {
   @include container-vertical;
-  -ms-flex-align: start;
-  align-self: start;
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: card-title;
   margin-bottom: $nx-spacing-md;
 }
 
 .nx-card--vertical {
   .nx-card-content {
-    -ms-flex-align: center;
     align-items: center;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     column-gap: 24px;
-
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    grid-area: card-content;
   }
 }
 
 .nx-card__call-out {
   display: inline-block;
   flex-grow: 1;
-  gap: $nx-spacing-l;
   margin-bottom: $nx-spacing-md;
 
   .nx-icon {
@@ -95,25 +78,16 @@
 
 .nx-card-footer {
   -ms-flex-align: end;
-  align-self: end;
+  align-self: flex-end;
   border-top: 1px solid #d1d6f0;
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  grid-area: card-footer;
   margin-top: $nx-spacing-xs;
   padding-top: $nx-spacing-l;
+  width: 100%;
 }
 
 .nx-card--horizontal {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto;
-  grid-template-columns: auto 1fr auto;
-  -ms-grid-rows: auto auto;
-  grid-template-areas:
-    "card-callout card-title card-footer"
-    "card-callout card-text card-footer";
-
+  display: flex;
+  flex-direction: row;
   margin: $nx-spacing-md 0;
   text-align: left;
   width: 100%;
@@ -122,10 +96,8 @@
   .nx-card-content {
     -ms-flex-align: stretch;
     align-self: stretch;
-    -ms-grid-row: 1 / 2;
-    -ms-grid-column: 2;
-    grid-row: 1 / 2;
-    grid-column: 2;
+    flex-direction: column;
+    flex-grow: 1;
 
     border-right: 1px solid #d1d6f0;
     border-left: 1px solid #d1d6f0;
@@ -134,28 +106,17 @@
   }
 
   .nx-card-header {
-    -ms-grid-row: 1;
-    -ms-grid-column: 2;
-    grid-area: card-title;
-
     margin-bottom: $nx-spacing-md;
   }
 
   .nx-card__text {
-    -ms-grid-row: 2;
-    -ms-grid-column: 2;
-    grid-area: card-text;
-
     margin: 0;
   }
 
   .nx-card__call-out {
     -ms-flex-align: center;
     align-self: center;
-    -ms-grid-row: 1 / 2;
-    -ms-grid-column: 1;
-    grid-area: card-callout;
-    justify-self: start;
+    flex-grow: 0;
 
     margin: 0;
     padding-right: 0;
@@ -164,15 +125,11 @@
   .nx-card-footer {
     -ms-flex-align: center;
     align-self: center;
-    -ms-grid-row: 1 / 2;
-    -ms-grid-column: 3;
-    grid-area: card-footer;
-    -ms-grid-column-align: center;
-    justify-self: center;
 
     border: none;
     margin: 0;
     padding: 0;
+    width: auto;
     max-width: 150px;
   }
 }
