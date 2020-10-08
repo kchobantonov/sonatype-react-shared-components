@@ -13,12 +13,6 @@
   @include container-horizontal;
 }
 
-.nx-card-container--column {
-  @include container-vertical;
-
-  flex-direction: column;
-}
-
 .nx-card {
   background-color: #fff;
   border-radius: $nx-border-radius;
@@ -27,7 +21,7 @@
   flex-direction: column;
   justify-content: space-between;
   margin: 0 $nx-spacing-md 0 0;
-  padding: $nx-spacing-l 48px;
+  padding: $nx-spacing-l $nx-spacing-xxl;
   text-align: center;
   min-width: 230px;
   max-width: 330px;
@@ -84,6 +78,12 @@
   width: 100%;
 }
 
+.nx-card-container--column {
+  @include container-vertical;
+
+  flex-direction: column;
+}
+
 .nx-card--horizontal {
   display: flex;
   flex-direction: row;
@@ -100,8 +100,8 @@
 
     border-right: 1px solid #d1d6f0;
     border-left: 1px solid #d1d6f0;
-    margin: 0 48px;
-    padding: 0 48px;
+    margin: 0 $nx-spacing-xxl;
+    padding: 0 $nx-spacing-xxl;
   }
 
   .nx-card-header {
