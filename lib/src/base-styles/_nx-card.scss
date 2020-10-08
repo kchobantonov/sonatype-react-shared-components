@@ -49,18 +49,17 @@
 }
 
 .nx-card__call-out {
+  @include container-horizontal;
   display: inline-block;
   flex-grow: 1;
   margin-bottom: $nx-spacing-md;
 
   .nx-icon {
-    // translates to 48px;
-    font-size: 3em;
+    font-size: 48px;
   }
 
   .nx-icon--large {
-    // translates to 64px;
-    font-size: 4em;
+    font-size: 64px;
   }
 }
 
