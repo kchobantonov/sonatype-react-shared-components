@@ -8,5 +8,13 @@ import React from 'react';
 import { NxBinaryDonutChart } from '@sonatype/react-shared-components';
 
 export default function NxBinaryDonutChartMinimalExample() {
-  return <NxBinaryDonutChart percent={90} />;
+  return (
+    <>
+      <NxBinaryDonutChart percent={0} />
+      <NxBinaryDonutChart percent={30} />
+      <NxBinaryDonutChart percent={50} />
+      <NxBinaryDonutChart percent={90} />
+      <NxBinaryDonutChart percent={100} />
+    </>
+  );
 }
