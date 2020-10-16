@@ -18,9 +18,9 @@ const NxBinaryDonutChart = forwardRef<SVGSVGElement, Props>(
       const strokeWidth = 100 - innerRadiusPercent;
       const r = innerRadiusPercent + (strokeWidth / 2);
 
-      // subtract 0.5π because we want the angle from the top of the circle, not the right
-      const arcEndAngle = (props.percent / 100) * 2 * Math.PI - 0.5 * Math.PI;
-      const arcEndX = -(Math.cos(arcEndAngle) * r);
+      // add 0.5π because we want the angle from the top of the circle, not the right
+      const arcEndAngle = (props.percent / 100) * 2 * Math.PI + 0.5 * Math.PI;
+      const arcEndX = (Math.cos(arcEndAngle) * r);
       const arcEndY = Math.sin(arcEndAngle) * r;
 
       // note: this doesn't behave as expected when percent = 0 or 100 hence the special cases in the rendering below
