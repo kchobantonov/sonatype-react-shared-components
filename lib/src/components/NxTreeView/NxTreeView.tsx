@@ -27,14 +27,14 @@ const NxTreeView: FunctionComponent<Props> =
         triggerId = useMemo(() => getRandomId('nx-tree-view-trigger'), []),
         trigger = (
           <div id={triggerId}
-                  className="nx-tree-view__trigger"
-                  onClick={onToggleCollapse || undefined}
-                  aria-controls={treeViewId}
-                  aria-disabled={disabled || undefined}>
-            <div className="nx-tree-view__twisty">
-              <span className="nx-tree-view__twisty-icon"/>
-            </div>
-            <button className="nx-tree-view__text">
+               className="nx-tree-view__trigger"
+               onClick={onToggleCollapse || undefined}
+               aria-controls={treeViewId}
+               aria-disabled={disabled || undefined}>
+            <button className="nx-tree-view__text" aria-label="Expand">
+              <div className="nx-tree-view__twisty">
+                <span className="nx-tree-view__twisty-icon"/>
+              </div>
               {triggerContent}
             </button>
           </div>
@@ -44,7 +44,7 @@ const NxTreeView: FunctionComponent<Props> =
     return (
       <div className={treeViewClasses}
            id={treeViewId}
-           role="tree"
+           role="treeitem"
            aria-expanded={isOpen}
            aria-labelledby={triggerId}
            aria-disabled={disabled || undefined}>
@@ -59,7 +59,7 @@ const NxTreeView: FunctionComponent<Props> =
 export const NxTreeViewChild: FunctionComponent<HTMLAttributes<HTMLDivElement>> =
   function NxTreeViewChild(props) {
     return (
-      <div { ...props } className={classnames('nx-tree-view__child', props.className)} role="treeitem" />
+      <div { ...props } className={classnames('nx-tree-view__child', props.className)} />
     );
   };
 

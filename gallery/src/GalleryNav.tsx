@@ -49,7 +49,7 @@ const categories = pipe<PageConfig, [string, PageMapping][], ReactNode[]>(
 
 function GalleryNav() {
   return (
-    <nav className="gallery-nav">
+    <nav className="gallery-nav" role="tree">
       {categories}
     </nav>
   );
