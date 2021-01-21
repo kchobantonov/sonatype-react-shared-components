@@ -7,3 +7,11 @@
 
 npm-debug.log
 junit.xml
+
+# Yarn 2 files
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
