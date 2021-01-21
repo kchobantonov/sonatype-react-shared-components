@@ -12,6 +12,6 @@ junit.xml
 .yarn/*
 !.yarn/releases
 !.yarn/plugins
-!.yarn/sdks
+# !.yarn/sdks
 !.yarn/versions
 .pnp.*
