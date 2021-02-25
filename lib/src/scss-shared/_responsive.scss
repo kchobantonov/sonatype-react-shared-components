@@ -1,0 +1,64 @@
+/**
+ * Copyright (c) 2019-present Sonatype, Inc.
+ * This program and the accompanying materials are made available under
+ * the terms of the Eclipse Public License 2.0 which accompanies this
+ * distribution and is available at https://www.eclipse.org/legal/epl-2.0/.
+ */
+
+.nx-body {
+  .mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .nx-body {
+    .mobile {
+      display: block;
+    }
+  }
+
+  .nx-page-sidebar {
+    display: none;
+  }
+
+  .nx-dropdown.nx-page__hamburger {
+    width: auto;
+    z-index: 1;
+
+    .nx-dropdown__toggle {
+      border: 1px solid transparent;
+      border-bottom: none;
+      width: auto;
+      z-index: 3;
+
+      &.open {
+        border: 1px solid #cacaca;
+        border-radius: 6px;
+        box-shadow: 0 2px 12px 0 rgba(74, 77, 113, 0.2),
+                    0 1px 2px 0 rgba(91, 95, 141, 0.2),
+                    0 1px 1px 0 rgba(124, 128, 179, 0.2);
+        border-radius: 6px 6px 0 0;
+      }
+    }
+
+    .nx-icon {
+      font-size: 2em;
+    }
+
+    .fa-caret-down, .fa-caret-up {
+      display: none;
+    }
+
+    .nx-dropdown-menu {
+      right: -24px;
+      height: auto;
+      max-height: calc(100vh - #{$nx-main-header-height} - 24px);
+      padding-left: 24px;
+      padding-right: 24px;
+      top: 47px;
+      width: 320px;
+      z-index: 2;
+    }
+  }
+}
