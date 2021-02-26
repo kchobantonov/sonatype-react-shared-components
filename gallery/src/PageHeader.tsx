@@ -20,14 +20,13 @@ function PageHeader() {
   const labelElement = <><NxFontAwesomeIcon icon={faHamburger}/></>;
 
   return <NxPageHeader homeLink="#" productInfo={productInfo}>
-      <NxDropdown
-        label={labelElement}
-        isOpen={isOpen}
-        onToggleCollapse={onToggleCollapse}
-        className="nx-page__hamburger mobile">
-        <GalleryNav />
-      </NxDropdown>
-    </NxPageHeader>;
-}
+    <NxDropdown label={labelElement}
+                isOpen={isOpen}
+                onToggleCollapse={onToggleCollapse}
+                className="nx-page__hamburger mobile">
+      <GalleryNav />
+    </NxDropdown>
+  </NxPageHeader>;
+};
 
 export default PageHeader;
