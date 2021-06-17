@@ -78,7 +78,7 @@ const NxTableBody = function NxTableBody(props: NxTableBodyProps) {
   );
 
   return (
-    <tbody ref={bodyRef} {...attrs}>
+    <tbody ref={bodyRef} aria-live="polite" {...attrs}>
       {isLoading && loadingSpinnerRow}
       {!!error && !isLoading && errorRow}
       {!isLoading && !error && children}
