@@ -106,14 +106,13 @@ export default function NxPagination({ className, pageCount, currentPage, onChan
            aria-label={`pagination, page ${currentPage + 1} of ${pageCount}`}
            className={classes}
            { ...attrs }>
-        { !onFirstPage &&
-          // Left arrow - back one page
-          <NxButton aria-label="goto previous page"
-                    onClick={handleBtnClick(currentPage - 1)}
-                    variant="tertiary">
-            <NxFontAwesomeIcon icon={faCaretLeft} />
-          </NxButton>
-        }
+        {/* Left arrow - back one page */}
+        <NxButton aria-label="goto previous page"
+                  onClick={handleBtnClick(currentPage - 1)}
+                  variant="tertiary"
+                  disabled={onFirstPage}>
+          <NxFontAwesomeIcon icon={faCaretLeft} />
+        </NxButton>
 
         { !!numPagesBelowRange &&
           // First page express
@@ -155,14 +154,13 @@ export default function NxPagination({ className, pageCount, currentPage, onChan
           </NxButton>
         }
 
-        { !onLastPage &&
-          // Right arrow - forward one page
-          <NxButton aria-label="goto next page"
-                    onClick={handleBtnClick(currentPage + 1)}
-                    variant="tertiary">
-            <NxFontAwesomeIcon icon={faCaretRight} />
-          </NxButton>
-        }
+        {/* Right arrow - forward one page */}
+        <NxButton aria-label="goto next page"
+                  onClick={handleBtnClick(currentPage + 1)}
+                  variant="tertiary"
+                  disabled={onLastPage}>
+          <NxFontAwesomeIcon icon={faCaretRight} />
+        </NxButton>
       </nav>
     );
   }
